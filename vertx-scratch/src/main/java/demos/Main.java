@@ -33,6 +33,8 @@ public class Main extends AbstractVerticle {
 
     Multi.createFrom().range(0, 100)
       .select().where(n -> n % 2 == 0)
+      .skip().first(40)
+      .onItem().transform(n -> "@" + n)
       .subscribe().with(System.out::println);
   }
 }
