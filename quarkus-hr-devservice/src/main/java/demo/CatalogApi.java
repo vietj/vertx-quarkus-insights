@@ -5,10 +5,12 @@ import io.smallrye.mutiny.Uni;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.transaction.Transactional;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
+import jakarta.transaction.Transactional;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.POST;
+import jakarta.ws.rs.Path;
+
+import java.util.List;
 
 @Path("/products")
 public class CatalogApi {
@@ -16,13 +18,12 @@ public class CatalogApi {
   private static final Logger logger = LoggerFactory.getLogger(CatalogApi.class);
 
   @GET
-  public Multi<Product> listProducts() {
+  public Uni<List<Product>> listProducts() {
     logger.info("listProducts");
     return Product.all();
   }
 
   @POST
-  @Transactional
   public Uni<Product> createProduct(Product product) {
     logger.info("register");
     return product.persistAndFlush().replaceWith(product);

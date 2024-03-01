@@ -14,10 +14,10 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
-    <logback-classic.version>1.2.3</logback-classic.version>
-    <vertx.version>4.1.5</vertx.version>
-    <smallrye-mutiny-vertx.version>2.14.2</smallrye-mutiny-vertx.version>
-    <maven-shade-plugin.version>3.2.3</maven-shade-plugin.version>
+    <logback-classic.version>1.5.1</logback-classic.version>
+    <vertx.version>4.5.4</vertx.version>
+    <smallrye-mutiny-vertx.version>3.10.0</smallrye-mutiny-vertx.version>
+    <maven-shade-plugin.version>3.5.2</maven-shade-plugin.version>
     <mainClass>demos.Main</mainClass>
   </properties>
 
