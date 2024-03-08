@@ -16,6 +16,7 @@
     <module>vertx-4-mutiny-sql-client</module>
     <module>vertx-4-hibernate-reactive-demo</module>
     <module>quarkus-hr-devservice</module>
+    <module>vertx-in-quarkus-sql-client</module>
   </modules>
 
 </project>
