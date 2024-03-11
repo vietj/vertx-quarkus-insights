@@ -61,10 +61,9 @@ public class ApiVerticle extends AbstractVerticle {
     logger.info("listProducts");
 
     return client.query("SELECT * FROM Product")
-      .mapping(Row::toJson)
-      .collecting(Collectors.toList())
+      .collecting(Collectors.mapping(row -> row.toJson(), Collectors.toList()))
       .execute()
-      .map(list -> new JsonArray(list.value()))
+      .map(sqlResult -> new JsonArray(sqlResult.value()))
       .otherwise(new JsonArray());
   }
 
